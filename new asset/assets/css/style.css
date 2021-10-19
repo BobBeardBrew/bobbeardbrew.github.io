@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/*=============== GOOGLE FONTS ===============*/
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --orange-bright: hsl(31, 77%, 52%);
+  --cyan-dark: hsl(184, 100%, 22%);
+  --cyan-very-dark: hsl(179, 100%, 13%);
+  --grey-light: hsla(0, 0%, 100%, 0.75);
+  --white-trans: hsl(0, 0%, 95%);
+  --trans-color: rgba(255, 255, 255, 0);
+  /*========== Font and typography ==========*/
+  --body-font: "Lexend Deca";
+  --h1-font: "Big Shoulders Display";
+  --body-font-size: 0.9375rem;
+  --h1-font-size: 2.5rem;
+  /*========== Font weight ==========*/
+  --font-normal: 400;
+  --font-bold: 700;
+  /*========== Margenes Bottom ==========*/
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-4-5: 4.5rem;
+}
+
+/*=============== RESPONSIVE TYPOGRAPHY ===============*/
+@media (max-width: 918px) {
+  :root {
+    --body-font-size: 0.9375rem;
+    --h1-font-size: 2.5rem;
+    /*========== Margenes Bottom ==========*/
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-4-5: 3rem;
+  }
+}
+
+/*=============== BASE ===============*/
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  color: var(--white-trans);
+}
+
+h1 {
+  font-family: var(--h1-font);
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+}
+
+/*============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, minmax(299px, 300px));
+}
+
+/*=============== CARD ===============*/
+.grid__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+.column__icon {
+  margin-bottom: var(--mb-2-5);
+}
+
+.column__title {
+  margin-bottom: var(--mb-2-5);
+}
+
+.column__text {
+  display: flex;
+  flex: 1 1 100%;
+  line-height: 200%;
+  color: var(--grey-light);
+  margin-bottom: var(--mb-4-5);
+}
+
+.column-orange {
+  background-color: var(--orange-bright);
+}
+
+.column-orange span {
+  color: var(--orange-bright);
+}
+
+.column-cyan {
+  background-color: var(--cyan-dark);
+}
+
+.column-cyan span {
+  color: var(--cyan-dark);
+}
+
+.column-darkcyan {
+  background-color: var(--cyan-very-dark);
+}
+
+.column-darkcyan span {
+  color: var(--cyan-very-dark);
+}
+
+.column:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.column:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.button {
+  display: block;
+  font-family: var(--body-font);
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 1px solid var(--grey-light);
+}
+
+.button:hover {
+  background-color: transparent;
+  border: 1px solid var(--grey-light);
+}
+
+.button:hover span {
+  color: var(--grey-light);
+}
+
+@media (max-width: 918px) {
+  .container {
+    height: initial;
+  }
+  .grid {
+    padding: 100px 27px;
+    grid-template-columns: minmax(320px, 90%);
+    grid-template-rows: 1fr;
+  }
+  .grid__body {
+    padding: 45px;
+  }
+  .column:first-child {
+    border-radius: 10px 10px 0 0;
+  }
+  .column:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+}
