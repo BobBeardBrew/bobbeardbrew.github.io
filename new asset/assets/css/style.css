@@ -212,11 +212,13 @@ h1 {
   padding: 15px 30px;
   border-radius: 30px;
   border: 1px solid var(--grey-light);
+  transition: all 0.2s;
 }
 
 .button:hover {
   background-color: transparent;
   border: 1px solid var(--grey-light);
+  transition: all 0.2s;
 }
 
 .button:hover span {
